@@ -4,7 +4,9 @@
   "description": "Logs data from IOT sensors.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index"
+    "start": "node src/index",
+    "test": "standard",
+    "focus": "standard-focus"
   },
   "repository": {
     "type": "git",

@@ -9,12 +9,12 @@ class Log {
     this.collection.find({id}, callback)
   }
 
-  save (sensor) {
+  save (sensor, callback) {
     if (!sensor) return
     this.collection.save(sensor, callback)
   }
 
-  create (id, name='sensor', callback) {
+  create (id, name = 'sensor', callback) {
     id = id.trim()
     name = name.trim()
     if (!id) return
