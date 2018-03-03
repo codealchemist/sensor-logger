@@ -6,7 +6,7 @@ class Log {
   }
 
   get (id, callback) {
-    this.collection.find({id}, callback)
+    this.collection.findOne({id}, callback)
   }
 
   save (sensor, callback) {

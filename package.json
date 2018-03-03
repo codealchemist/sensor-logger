@@ -29,6 +29,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "moment": "^2.21.0",
+    "moment-timezone": "^0.5.14",
     "mongojs": "^2.5.0",
     "printii": "^1.0.0",
     "standard-focus": "^1.1.2"

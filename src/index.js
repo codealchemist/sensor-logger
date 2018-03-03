@@ -1,3 +1,4 @@
+const moment = require('moment-timezone')
 const express = require('express')
 const bodyParser = require('body-parser')
 const printii = require('printii')(__dirname)
@@ -33,10 +34,22 @@ app.get('/list/:sensorId', (req, res) => {
       res
         .status(500)
         .send(err)
+      return
     }
 
-    sensor = sensor || ''
-    console.log(`got sensor ${id}:`, sensor)
+    if (!sensor) {
+      res
+        .status(404)
+        .send(null)
+      return
+    }
+
+    console.log('SENSOR DATA', sensor)
+
+    sensor.data.map(item => {
+      item.date = moment().tz('America/Argentina').format()
+    })
+
     res
       .status(200)
       .send(sensor)
