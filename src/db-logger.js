@@ -8,9 +8,9 @@ class Log {
   /**
    * Passes latest values for requested id up to set limit.
    * Default limit is 1.
-   * 
+   *
    * @param {id, limit} object
-   * @param {function} callback 
+   * @param {function} callback
    */
   get ({id, limit = 1}, callback) {
     this.collection

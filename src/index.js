@@ -82,7 +82,7 @@ app.get('/summary/:sensorId', (req, res) => {
       item.date = moment(item.date)
         .tz('America/Argentina/Buenos_Aires')
         .format('DD MMM YYYY, HH:mm')
-      summary.push(`${item.date}: ${item.value.substr(0,4)}`)
+      summary.push(`${item.date}: ${item.value.substr(0, 4)}`)
     })
 
     res
