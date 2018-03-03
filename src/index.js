@@ -1,6 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const printii = require('printii')(__dirname)
 const dbLogger = require('./db-logger')
+
+printii()
 
 const app = express()
 const port = process.env.PORT || 8080
