@@ -32,5 +32,10 @@
     "mongojs": "^2.5.0",
     "printii": "^1.0.0",
     "standard-focus": "^1.1.2"
+  },
+  "standard": {
+    "ignore": [
+      "src/utils/**"
+    ]
   }
 }
