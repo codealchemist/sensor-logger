@@ -24,6 +24,25 @@ app.get('/log/:sensorId/:value', (req, res) => {
   })
 })
 
+app.get('/list/:sensorId', (req, res) => {
+  const id = req.params.sensorId
+  console.log(`LIST SENSOR ${id}`)
+  dbLogger.get(id, (err, sensor) => {
+    if (err) {
+      console.log(`ERROR listing sensor ${id}:`, err)
+      res
+        .status(500)
+        .send(err)
+    }
+
+    sensor = sensor || ''
+    console.log(`got sensor ${id}:`, sensor)
+    res
+      .status(200)
+      .send(sensor)
+  })
+})
+
 app.get('/reset/:sensorId/', (req, res) => {
   const id = req.params.sensorId
   dbLogger.reset(id, () => {
