@@ -5,8 +5,18 @@ class Log {
     this.collection = db.collection('log')
   }
 
-  get (id, callback) {
-    this.collection.findOne({id}, callback)
+  /**
+   * Passes latest values for requested id up to set limit.
+   * Default limit is 1.
+   * 
+   * @param {id, limit} object
+   * @param {function} callback 
+   */
+  get ({id, limit = 1}, callback) {
+    this.collection
+      .find({id})
+      .sort({date: -1})
+      .limit(limit, callback)
   }
 
   save (sensor, callback) {
@@ -29,14 +39,8 @@ class Log {
 
   reset (id, callback) {
     if (!id) return
-    this.collection.update(
+    this.collection.remove(
       {id},
-      {
-        $set: {
-          updated: new Date(),
-          data: []
-        }
-      },
       callback
     )
   }
@@ -44,13 +48,8 @@ class Log {
   add ({id, value}, callback) {
     if (!id) return
     console.log('DB: ADD', {id, value})
-    this.collection.update(
-      {id},
-      {
-        $set: { updated: new Date() },
-        $push: { data: {value, date: new Date()} }
-      },
-      {upsert: true},
+    this.collection.save(
+      {id, value, date: new Date()},
       callback
     )
   }
