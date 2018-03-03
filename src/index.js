@@ -6,6 +6,7 @@ const dbLogger = require('./db-logger')
 printii()
 
 const app = express()
+const env = process.env.ENV || 'dev'
 const port = process.env.PORT || 8080
 
 app.use(bodyParser.json()) // support json encoded bodies
