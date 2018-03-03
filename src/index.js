@@ -46,7 +46,7 @@ app.get('/list/:sensorId', (req, res) => {
 
     console.log(`returning data for sensor: ${id}`)
     sensor.data.map(item => {
-      item.date = moment().tz('America/Argentina').format()
+      item.date = moment(item.date).tz('America/Argentina').format()
     })
 
     res
