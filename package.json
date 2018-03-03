@@ -1,0 +1,34 @@
+{
+  "name": "sensor-logger",
+  "version": "1.0.0",
+  "description": "Logs data from IOT sensors.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codealchemist/sensor-logger.git"
+  },
+  "keywords": [
+    "temp",
+    "alarm",
+    "server",
+    "alerts",
+    "alert",
+    "temperature"
+  ],
+  "author": "Alberto Miranda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codealchemist/sensor-logger/issues"
+  },
+  "homepage": "https://github.com/codealchemist/sensor-logger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongojs": "^2.5.0",
+    "printii": "^1.0.0",
+    "standard-focus": "^1.1.2"
+  }
+}
