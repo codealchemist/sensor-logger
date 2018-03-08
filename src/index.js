@@ -33,7 +33,7 @@ app.get('/log/:sensorId/:value', (req, res) => {
 
   adafruitLogger.add(item, (err, response, body) => {
     if (err) return utils.sendError(`ERROR adding value for sensor ${id}:`, err)
-    //console.log(`saved to AdafruitIO: ${id}`, body)
+    console.log(`saved to AdafruitIO: ${id}`, body)
   })
 })
 
