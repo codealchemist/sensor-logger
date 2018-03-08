@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const printii = require('printii')(__dirname)
 const dbLogger = require('./db-logger')
+const adafruitLogger = require('./adafruit-logger')
 const utils = require('./utils')
 
 printii()
@@ -28,6 +29,11 @@ app.get('/log/:sensorId/:value', (req, res) => {
     res
       .status(200)
       .send(item)
+  })
+
+  adafruitLogger.add(item, (err, response, body) => {
+    if (err) return utils.sendError(`ERROR adding value for sensor ${id}:`, err)
+    //console.log(`saved to AdafruitIO: ${id}`, body)
   })
 })
 

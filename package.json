@@ -33,6 +33,7 @@
     "moment-timezone": "^0.5.14",
     "mongojs": "^2.5.0",
     "printii": "^1.0.0",
+    "request": "^2.83.0",
     "standard-focus": "^1.1.2"
   },
   "standard": {
