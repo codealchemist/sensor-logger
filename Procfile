@@ -1,1 +1,1 @@
-web: ENV=prod node index.js
+web: ENV=prod node src/index.js
